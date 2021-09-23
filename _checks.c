@@ -11,7 +11,7 @@ void check_opcode(void(*get_op)(), vars_opc check, stack_t *head)
 {
 	if (get_op == NULL)
 	{
-		printf("L%d: unknown instruction %s\n",
+		fprintf(stderr, "L%d: unknown instruction %s\n",
 		       check.cont_line, check.list_items[0]);
 		free(check.line);
 		fclose(check.fd);
@@ -56,7 +56,8 @@ void check_if_push(vars_opc check, stack_t *head)
 		}
 		else
 		{
-			printf("L%d: usage: push integer\n", check.cont_line);
+			fprintf(stderr, "L%d: usage: push integer\n",
+				check.cont_line);
 			free(check.line);
 			fclose(check.fd);
 			free_stack(head);

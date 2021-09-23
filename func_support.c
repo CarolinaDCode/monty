@@ -16,8 +16,10 @@ char **_tokenizer_line(char *buffer, char *delimiter)
 
 	token = malloc(sizeof(char *) * 10);
 	if (token == NULL)
-		return (NULL);
-
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 	while ((token[i] = strtok(buffer, delimiter)) != NULL)
 	{
 		i++;
