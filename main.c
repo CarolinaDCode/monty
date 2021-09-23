@@ -43,5 +43,8 @@ int main(int argc, char **argv)
 
 		check.cont_line++;
 	}
+	free(check.line);
+	fclose(check.fd);
+	free_stack(head);
 	return (0);
 }
