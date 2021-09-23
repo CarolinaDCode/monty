@@ -18,6 +18,7 @@ void check_opcode(void(*get_op)(), vars_opc check, stack_t *head)
 		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
+	free(check.list_items);
 }
 
 /**
