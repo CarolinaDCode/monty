@@ -61,7 +61,6 @@ void _op_sub(stack_t **head, unsigned int line_number)
 	free(temp);
 }
 
-
 /**
  * _op_div - divides the second top element
  * of the stack by the top element of the stack.
@@ -90,5 +89,29 @@ void _op_div(stack_t **head, unsigned int line_number)
         *head = (*head)->next;
         (*head)->prev = NULL;
         free(temp);
+}
 
+
+/**
+ * _op_mul - multiplies the second top element
+ * multiplies the second top element
+ * @head: head (stack) to the stack
+ * @line_number: line number where opcode is located
+ */
+void _op_mul(stack_t **head, unsigned int line_number)
+{
+        stack_t *temp;
+
+        if (*head == NULL || (*head)->next == NULL)
+        {
+                fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+                value[1] = -1;
+                return;
+        }
+
+        temp = *head;
+        (*head)->next->n *= (*head)->n;
+        *head = (*head)->next;
+        (*head)->prev = NULL;
+        free(temp);
 }
