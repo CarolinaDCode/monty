@@ -30,6 +30,9 @@ int _is_number(char *ptr)
 {
 	int i;
 
+	if (ptr == NULL)
+		return (0);
+
 	if (ptr != NULL && ptr[0] == '-')
 		ptr++;
 
@@ -50,8 +53,7 @@ void check_if_push(vars_opc check, stack_t *head)
 {
 	if (strcmp(check.list_items[0], "push") == 0)
 	{
-		if (check.list_items[1][0] != '\0'
-		    && _is_number(check.list_items[1]))
+		if ( _is_number(check.list_items[1]))
 		{
 			value[0] = atoi(check.list_items[1]);
 		}

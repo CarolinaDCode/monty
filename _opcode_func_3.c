@@ -103,3 +103,15 @@ void _op_rotl(stack_t **head, unsigned int line_number)
 		*head = nodo_2;
 	}
 }
+
+
+/**
+ * _op_rotr - rotates the stack to the top.
+ * @head: head (stack) to the stack
+ * @line_number: line number where opcode is located
+ */
+void _op_rotr(stack_t **head, unsigned int line_number)
+{
+	(void) head;
+	(void) line_number;
+}

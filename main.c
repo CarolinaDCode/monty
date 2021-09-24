@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "monty.h"
 
-/*int value[2] = {0, 0};*/
 /**
  * main - function main
  * @argc: argc
@@ -43,6 +42,7 @@ int main(int argc, char **argv)
 
 		check.cont_line++;
 	}
+	exit(EXIT_SUCCESS);
 	free(check.line);
 	fclose(check.fd);
 	free_stack(head);

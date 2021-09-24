@@ -23,6 +23,7 @@ void (*get_func_opcode(char *s))(stack_t **stack, unsigned int ln)
 		{"pchar", _op_pchar},
 		{"pstr", _op_pstr},
 		{"rotl", _op_rotl},
+		{"rotr", _op_rotr},
 		{NULL, NULL}
 	};
 
