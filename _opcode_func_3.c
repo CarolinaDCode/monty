@@ -77,3 +77,29 @@ void _op_pstr(stack_t **head, unsigned int line_number)
 	}
 	putchar('\n');
 }
+
+/**
+ * _op_rotl - rotates the stack to the top.
+ * @head: head (stack) to the stack
+ * @line_number: line number where opcode is located
+ */
+void _op_rotl(stack_t **head, unsigned int line_number)
+{
+	stack_t *temp_1, *nodo_1, *nodo_2;
+
+	(void) line_number;
+	if(*head != NULL && (*head)->next != NULL)
+	{
+		temp_1 = nodo_1 = *head;
+		nodo_2 = temp_1->next;
+
+		while (temp_1->next != NULL)
+			temp_1 = temp_1->next;
+
+		temp_1->next = nodo_1;
+		nodo_1->prev = temp_1;
+		nodo_1->next = NULL;
+		nodo_2->prev = NULL;
+		*head = nodo_2;
+	}
+}
