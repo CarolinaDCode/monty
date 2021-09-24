@@ -49,6 +49,7 @@ void _op_pchar(stack_t **head, unsigned int line_number)
 			value[1] = -1;
 			return;
 		}
+
 	}
 	else
 	{
