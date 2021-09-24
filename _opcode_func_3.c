@@ -60,3 +60,20 @@ void _op_pchar(stack_t **head, unsigned int line_number)
 	putchar(c);
 	putchar('\n');
 }
+
+/**
+ * _op_pstr - prints the string starting at the top of the stack,
+ * followed by a new line.
+ * @head: head (stack) to the stack
+ * @line_number: line number where opcode is located
+ */
+void _op_pstr(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+	while (*head != NULL && ((*head)->n > 0 && (*head)->n <= 127))
+	{
+		putchar((*head)->n);
+		*head = (*head)->next;
+	}
+	putchar('\n');
+}
