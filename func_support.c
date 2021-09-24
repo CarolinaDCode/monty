@@ -25,6 +25,11 @@ char **_tokenizer_line(char *buffer, char *delimiter)
 		i++;
 		buffer = NULL;
 	}
+	/*if (*token[0] == '#')
+	{
+		*token[0] = '\0';
+		return (NULL);
+		}*/
 	return (token);
 }
 
