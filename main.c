@@ -20,20 +20,15 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	check.fd = fopen(argv[1], "r");
 	if (check.fd == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while (getline(&(check.line), &size, check.fd) != -1)
 	{
 		check.cont_line++;
-		/*if (strcmp(check.line, "\n") == 0)*/
-		/*continue;*/
-
 		check.list_items = _tokenizer_line(check.line, " \n\t");
 		if (check.list_items[0] == NULL)
 		{
