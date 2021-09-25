@@ -36,7 +36,10 @@ int main(int argc, char **argv)
 
 		check.list_items = _tokenizer_line(check.line, " \n\t");
 		if (check.list_items[0] == NULL)
+		{
+			free(check.list_items);
 			continue;
+		}
 		check_if_push(check, head);
 		getf = get_func_opcode(check.list_items[0]);
 		check_opcode(getf, check, head);
