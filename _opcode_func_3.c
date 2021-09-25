@@ -39,12 +39,13 @@ void _op_mod(stack_t **head, unsigned int line_number)
 void _op_pchar(stack_t **head, unsigned int line_number)
 {
 	int c;
+
 	c = (*head)->n;
 	if (*head != NULL)
 	{
 		if (c < 0 || c > 127)
 		{
-			fprintf(stderr,"L%d: can't pchar, value out of range\n",
+			fprintf(stderr, "L%d: can't pchar, value out of range\n",
 				line_number);
 			value[1] = -1;
 			return;
@@ -53,7 +54,7 @@ void _op_pchar(stack_t **head, unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr,"L%u: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		value[1] = -1;
 		return;
 	}
@@ -88,7 +89,7 @@ void _op_rotl(stack_t **head, unsigned int line_number)
 	stack_t *temp_1, *nodo_1, *nodo_2;
 
 	(void) line_number;
-	if(*head != NULL && (*head)->next != NULL)
+	if (*head != NULL && (*head)->next != NULL)
 	{
 		temp_1 = nodo_1 = *head;
 		nodo_2 = temp_1->next;

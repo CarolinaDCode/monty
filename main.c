@@ -31,8 +31,8 @@ int main(int argc, char **argv)
 	while (getline(&(check.line), &size, check.fd) != -1)
 	{
 		check.cont_line++;
-		/*if (strcmp(check.line, "\n") == 0)
-		  continue;*/
+		/*if (strcmp(check.line, "\n") == 0)*/
+		/*continue;*/
 
 		check.list_items = _tokenizer_line(check.line, " \n\t");
 		if (check.list_items[0] == NULL)
