@@ -44,7 +44,6 @@ int main(int argc, char **argv)
 		_fail(check, head);
 
 	}
-	exit(EXIT_SUCCESS);
 	free(check.line);
 	fclose(check.fd);
 	free_stack(head);
