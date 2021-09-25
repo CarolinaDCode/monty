@@ -4,7 +4,7 @@
  * @s: opcode passed to the program
  * Return: a pointer to the function given the opcode
  */
-void (*get_func_opcode(char *s))(stack_t **stack, unsigned int ln)
+void (*get_func_opcode(vars_opc prop))(stack_t **stack, unsigned int ln)
 {
 	int i = 0;
 
@@ -27,9 +27,13 @@ void (*get_func_opcode(char *s))(stack_t **stack, unsigned int ln)
 		{NULL, NULL}
 	};
 
+	if (prop.list_items[0][0] == '#')
+	{
+		return (_op_nop);
+	}
 	while (_opcode[i].opcode != NULL)
 	{
-		if (strcmp(s, _opcode[i].opcode) == 0)
+		if (strcmp(prop.line, _opcode[i].opcode) == 0)
 		{
 			return (*(_opcode[i]).f);
 		}

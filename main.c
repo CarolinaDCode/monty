@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		check_if_push(check, head);
-		getf = get_func_opcode(check.list_items[0]);
+		getf = get_func_opcode(check);
 		check_opcode(getf, check, head);
 		(*getf)(&head, check.cont_line);
 		_fail(check, head);

@@ -67,7 +67,7 @@ void check_if_push(vars_opc check, stack_t *head);
 void _fail(vars_opc check, stack_t *head);
 int _is_number(char *ptr);
 
-void (*get_func_opcode(char *s))(stack_t **stack, unsigned int line_number);
+void (*get_func_opcode(vars_opc prop))(stack_t **stack, unsigned int line_number);
 
 /*OPERATIONS*/
 void _op_pall(stack_t **stack, unsigned int line_number);
