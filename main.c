@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	vars_opc check = {1, NULL, NULL, NULL};
+	vars_opc check = {0, NULL, NULL, NULL};
 	stack_t *head = NULL;
 	size_t size = 0;
 	void (*getf)(stack_t **stack, unsigned int line_number);
@@ -30,17 +30,19 @@ int main(int argc, char **argv)
 
 	while (getline(&(check.line), &size, check.fd) != -1)
 	{
-		if (strcmp(check.line, "\n") == 0)
-			continue;
+		check.cont_line++;
+		/*if (strcmp(check.line, "\n") == 0)
+		  continue;*/
 
 		check.list_items = _tokenizer_line(check.line, " \n\t");
+		if (check.list_items[0] == NULL)
+			continue;
 		check_if_push(check, head);
 		getf = get_func_opcode(check.list_items[0]);
 		check_opcode(getf, check, head);
 		(*getf)(&head, check.cont_line);
 		_fail(check, head);
 
-		check.cont_line++;
 	}
 	exit(EXIT_SUCCESS);
 	free(check.line);

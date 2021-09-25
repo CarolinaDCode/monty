@@ -53,7 +53,7 @@ void check_if_push(vars_opc check, stack_t *head)
 {
 	if (strcmp(check.list_items[0], "push") == 0)
 	{
-		if ( _is_number(check.list_items[1]))
+		if (_is_number(check.list_items[1]))
 		{
 			value[0] = atoi(check.list_items[1]);
 		}
