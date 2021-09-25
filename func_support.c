@@ -3,7 +3,7 @@
 /**
  *_tokenizer_line - item separating function
  *@buffer: string to separate
- *@delimiter: separator
+  *@delimiter: separator
  *Return: pointer to buffer
  */
 char **_tokenizer_line(char *buffer, char *delimiter)
@@ -20,7 +20,7 @@ char **_tokenizer_line(char *buffer, char *delimiter)
 		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
-	while ((token[i] = strtok(buffer, delimiter)) != NULL)
+	while ((token[i] = strtok(buffer, delimiter)) != NULL && i < 9)
 	{
 		i++;
 		buffer = NULL;
